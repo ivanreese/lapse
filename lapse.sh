@@ -2,10 +2,12 @@
 set -e
 
 mkdir -p ~/Desktop/lapse
+I=0
 
 while true
 do
-  echo "Capturing `date +%s`"
-  screencapture -C -m -t jpg -x -r ~/Desktop/lapse/`date +%s`.jpg
-  sleep 1
+  echo "Capturing $I"
+  screencapture -C -m -t jpg -x -r ~/Desktop/lapse/$I.jpg
+  let I=I+1;
+  sleep 5
 done
